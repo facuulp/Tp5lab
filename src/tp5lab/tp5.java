@@ -42,6 +42,11 @@ public class tp5 extends javax.swing.JFrame {
         });
 
         Jguardar.setText("Guardar");
+        Jguardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JguardarActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Nombre:");
 
@@ -112,6 +117,19 @@ private void nombreCategoria() {
     private void JcategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JcategoriaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JcategoriaActionPerformed
+
+    private void JguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JguardarActionPerformed
+        // TODO add your handling code here:
+        String nombre;
+        double precio;
+        nombre=Jnombre.getText();
+        try { 
+        precio=Double.parseDouble(Jprecio.getText());
+        } catch (Exception e) {
+        JOptionPanel.
+        }
+        
+    }//GEN-LAST:event_JguardarActionPerformed
 
     /**
      * @param args the command line arguments
