@@ -4,6 +4,8 @@
  */
 package tp5lab;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Facundo
@@ -126,7 +128,8 @@ private void nombreCategoria() {
         try { 
         precio=Double.parseDouble(Jprecio.getText());
         } catch (Exception e) {
-        JOptionPanel.
+        JOptionPane.showMessageDialog(this, "ERROR: Ingrese un numero");
+        return;
         }
         
     }//GEN-LAST:event_JguardarActionPerformed
