@@ -5,6 +5,7 @@
 package tp5lab;
 
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -12,10 +13,12 @@ import javax.swing.JOptionPane;
  */
 public class tp5 extends javax.swing.JFrame {
 
-   
+    private DefaultTableModel modelo = new DefaultTableModel();
+    
     public tp5() {
         initComponents();
         nombreCategoria();
+        armarCabecera();
     }
 
     
@@ -124,6 +127,8 @@ private void nombreCategoria() {
         // TODO add your handling code here:
         String nombre;
         double precio;
+        String categ;
+        categ = (String) Jcategoria.getSelectedItem();
         nombre=Jnombre.getText();
         try { 
         precio=Double.parseDouble(Jprecio.getText());
@@ -131,12 +136,23 @@ private void nombreCategoria() {
         JOptionPane.showMessageDialog(this, "ERROR: Ingrese un numero");
         return;
         }
+        modelo.addRow(new Object[]{
+            nombre,precio,categ
+                
+        
+        });
         
     }//GEN-LAST:event_JguardarActionPerformed
+    public void armarCabecera(){
 
-    /**
-     * @param args the command line arguments
-     */
+        modelo.addColumn("Nombre");
+        modelo.addColumn("Precio");
+        modelo.addColumn("Categoría");
+        jTabla.setModel(modelo);
+        
+    }
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
